@@ -7,12 +7,13 @@
         <!--View Controller-->
         <scene sceneID="g1q-pX-5a2">
             <objects>
-                <viewController id="UAg-nY-d1U" sceneMemberID="viewController">
+                <viewController id="UAg-nY-d1U" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Tpb-AF-xus"/>
                         <viewControllerLayoutGuide type="bottom" id="1ot-MV-vhv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Vyk-Qv-zbS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-Ue-XrI">
@@ -46,10 +47,14 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="2Xw-QG-fFZ" id="4dy-5j-vO5"/>
+                        <outlet property="tableView" destination="SMr-Ue-XrI" id="foZ-fV-ic0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iF7-vP-vH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-241" y="87.75"/>
+            <point key="canvasLocation" x="-265" y="246.75"/>
         </scene>
     </scenes>
 </document>

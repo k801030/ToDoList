@@ -10,6 +10,8 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic)IBOutlet UIButton *addButton;
+@property (nonatomic)IBOutlet UITableView *tableView;
+@property (strong)UITableViewCell *tableViewCell;
 
 @end
-

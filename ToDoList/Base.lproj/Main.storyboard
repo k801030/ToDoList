@@ -190,6 +190,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="saveButton" destination="OhY-yX-g8t" id="dPz-ZW-ezl"/>
+                        <outlet property="textField" destination="aFs-d2-rOh" id="b5z-ql-5mV"/>
+                    </connections>
                 </viewController>
                 <exit id="T0p-XK-QUr" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0H-bB-FoB" userLabel="First Responder" sceneMemberID="firstResponder"/>

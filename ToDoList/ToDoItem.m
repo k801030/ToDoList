@@ -32,6 +32,7 @@
     self = [super init];
     _itemName = itemName;
     _creationDate = [NSDate date];
+    _completed = NO;
     return self;
 }
 

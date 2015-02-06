@@ -41,9 +41,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
-    cell.textLabel.text = [[self.toDoItems objectAtIndex:indexPath.row] itemName];
+    ToDoItem *todoItem = [self.toDoItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = todoItem.itemName;
+    if (todoItem.completed) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
 }
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // deselect
+    [tableView deselectRowAtIndexPath:indexPath animated:NO];
+    ToDoItem *tappedItem = [self.toDoItems objectAtIndex:indexPath.row];
+    tappedItem.completed = !tappedItem.completed;
+    [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
+}
+
 
 #pragma mark - segue
 

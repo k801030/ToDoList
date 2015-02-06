@@ -28,4 +28,11 @@
     }
 }
 
+- (id)initWithName:(NSString *)itemName {
+    self = [super init];
+    _itemName = itemName;
+    _creationDate = [NSDate date];
+    return self;
+}
+
 @end

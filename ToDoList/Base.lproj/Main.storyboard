@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UAg-nY-d1U">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,45 +17,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="SMr-Ue-XrI">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="58" width="600" height="742"/>
-                                </variation>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Xw-QG-fFZ">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9n8-7g-9JG">
+                                <rect key="frame" x="277" y="20" width="46" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="277" y="20" width="46" height="30"/>
-                                </variation>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7zg-7Q-ryy">
+                                <rect key="frame" x="0.0" y="58" width="600" height="542"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="SMr-Ue-XrI"/>
-                                <exclude reference="2Xw-QG-fFZ"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="SMr-Ue-XrI"/>
-                                <include reference="2Xw-QG-fFZ"/>
-                            </mask>
-                        </variation>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="7zg-7Q-ryy" secondAttribute="trailing" constant="-16" id="3qh-1b-R2H"/>
+                            <constraint firstItem="1ot-MV-vhv" firstAttribute="top" secondItem="7zg-7Q-ryy" secondAttribute="bottom" constant="2" id="D3Y-mM-0HY"/>
+                            <constraint firstAttribute="centerX" secondItem="7zg-7Q-ryy" secondAttribute="centerX" id="GTM-zs-ifr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7zg-7Q-ryy" secondAttribute="trailing" constant="-16" id="Mu5-Rv-tlo"/>
+                            <constraint firstItem="7zg-7Q-ryy" firstAttribute="top" secondItem="9n8-7g-9JG" secondAttribute="bottom" constant="8" id="SP7-cN-4GK"/>
+                            <constraint firstAttribute="centerX" secondItem="9n8-7g-9JG" secondAttribute="centerX" id="VM0-jt-hMM"/>
+                            <constraint firstItem="1ot-MV-vhv" firstAttribute="top" secondItem="7zg-7Q-ryy" secondAttribute="bottom" id="dNq-I8-7AK"/>
+                            <constraint firstItem="7zg-7Q-ryy" firstAttribute="leading" secondItem="Vyk-Qv-zbS" secondAttribute="leadingMargin" constant="-16" id="gg4-ez-tLN"/>
+                            <constraint firstItem="9n8-7g-9JG" firstAttribute="top" secondItem="Vyk-Qv-zbS" secondAttribute="topMargin" constant="20" id="opb-5G-Syn"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="addButton" destination="2Xw-QG-fFZ" id="4dy-5j-vO5"/>
-                        <outlet property="tableView" destination="SMr-Ue-XrI" id="foZ-fV-ic0"/>
+                        <outlet property="addButton" destination="9n8-7g-9JG" id="oXI-3h-tB5"/>
+                        <outlet property="tableView" destination="7zg-7Q-ryy" id="4BL-d1-0Kq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iF7-vP-vH6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-265" y="246.75"/>
+            <point key="canvasLocation" x="-254" y="413"/>
         </scene>
     </scenes>
 </document>

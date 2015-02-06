@@ -7,12 +7,11 @@
 //
 
 #import "AddToDoItemVC.h"
-#import "ToDoItem.h"
+
 @interface AddToDoItemVC()
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
-@property ToDoItem *todoItem;
 
 @end
 
@@ -28,7 +27,7 @@
         return;
     }
     if (self.textField.text.length > 0) {
-        self.todoItem = [[ToDoItem alloc] initWithName:self.textField.text];
+        self.item = [[ToDoItem alloc] initWithName:self.textField.text];
     }
 }
 

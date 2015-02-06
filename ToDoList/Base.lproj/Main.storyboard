@@ -191,8 +191,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="saveButton" destination="OhY-yX-g8t" id="dPz-ZW-ezl"/>
-                        <outlet property="textField" destination="aFs-d2-rOh" id="b5z-ql-5mV"/>
+                        <outlet property="saveButton" destination="OhY-yX-g8t" id="bUa-la-Bdi"/>
+                        <outlet property="textField" destination="iKp-du-nZW" id="FN6-n3-wK6"/>
                     </connections>
                 </viewController>
                 <exit id="T0p-XK-QUr" userLabel="Exit" sceneMemberID="exit"/>

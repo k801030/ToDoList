@@ -7,6 +7,7 @@
 //
 
 #import "ToDoListTableVC.h"
+#import "AddToDoItemVC.h"
 
 @interface ToDoListTableVC ()
 
@@ -65,7 +66,12 @@
 #pragma mark - segue
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
-    
+    AddToDoItemVC *source = [segue sourceViewController];
+    ToDoItem *item = source.item;
+    if (item != nil) {
+        [self.toDoItems addObject:item];
+        [self.tableView reloadData];
+    }
 }
 
 

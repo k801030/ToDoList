@@ -16,6 +16,7 @@
 		8B35CE7F1A833FA4009F4AF7 /* ToDoListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35CE7E1A833FA4009F4AF7 /* ToDoListTests.m */; };
 		8B35CEBC1A846EF6009F4AF7 /* AddToDoItemVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35CEBB1A846EF6009F4AF7 /* AddToDoItemVC.m */; };
 		8B35CEBF1A847256009F4AF7 /* ToDoListTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35CEBE1A847256009F4AF7 /* ToDoListTableVC.m */; };
+		8B35CEC21A849655009F4AF7 /* ToDoItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B35CEC11A849655009F4AF7 /* ToDoItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,8 @@
 		8B35CEBB1A846EF6009F4AF7 /* AddToDoItemVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddToDoItemVC.m; sourceTree = "<group>"; };
 		8B35CEBD1A847256009F4AF7 /* ToDoListTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoListTableVC.h; sourceTree = "<group>"; };
 		8B35CEBE1A847256009F4AF7 /* ToDoListTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoListTableVC.m; sourceTree = "<group>"; };
+		8B35CEC01A849655009F4AF7 /* ToDoItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToDoItem.h; sourceTree = "<group>"; };
+		8B35CEC11A849655009F4AF7 /* ToDoItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToDoItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +96,8 @@
 				8B35CE6A1A833FA4009F4AF7 /* ViewController.m */,
 				8B35CE6C1A833FA4009F4AF7 /* Main.storyboard */,
 				8B35CEBD1A847256009F4AF7 /* ToDoListTableVC.h */,
+				8B35CEC01A849655009F4AF7 /* ToDoItem.h */,
+				8B35CEC11A849655009F4AF7 /* ToDoItem.m */,
 				8B35CEBE1A847256009F4AF7 /* ToDoListTableVC.m */,
 				8B35CEBA1A846EF6009F4AF7 /* AddToDoItemVC.h */,
 				8B35CEBB1A846EF6009F4AF7 /* AddToDoItemVC.m */,
@@ -229,6 +234,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B35CEC21A849655009F4AF7 /* ToDoItem.m in Sources */,
 				8B35CEBC1A846EF6009F4AF7 /* AddToDoItemVC.m in Sources */,
 				8B35CE6B1A833FA4009F4AF7 /* ViewController.m in Sources */,
 				8B35CE681A833FA4009F4AF7 /* AppDelegate.m in Sources */,

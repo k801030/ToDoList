@@ -105,7 +105,7 @@
                     <navigationItem key="navigationItem" title="ToToDo List" id="Inl-RH-esr">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="fcY-ED-rxw">
                             <connections>
-                                <segue destination="SS1-UN-KUl" kind="presentation" id="rD4-tL-Ke6"/>
+                                <segue destination="zbg-V6-Pir" kind="presentation" id="L9r-aA-ZKH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -117,6 +117,8 @@
         <!--Add To Do Item Scene-->
         <scene sceneID="4a1-cz-L2M">
             <objects>
+                <exit id="T0p-XK-QUr" userLabel="Exit" sceneMemberID="exit"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R0H-bB-FoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController title="Add To Do Item Scene" id="SS1-UN-KUl" customClass="AddToDoItemVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j3O-MU-043"/>
@@ -140,10 +142,21 @@
                             <constraint firstItem="iKp-du-nZW" firstAttribute="leading" secondItem="OTG-cm-UCp" secondAttribute="leadingMargin" id="xvv-We-kc7"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tEe-FE-AqD">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gxK-zD-Avn">
+                            <connections>
+                                <segue destination="T0p-XK-QUr" kind="unwind" unwindAction="unwindToList:" id="t4a-t4-11N"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OhY-yX-g8t">
+                            <connections>
+                                <segue destination="T0p-XK-QUr" kind="unwind" unwindAction="unwindToList:" id="EEd-i5-Nvj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R0H-bB-FoB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2407" y="413"/>
+            <point key="canvasLocation" x="3219" y="413"/>
         </scene>
         <!--Nav Ctrler-->
         <scene sceneID="S7V-li-nJF">
@@ -284,6 +297,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="To8-8J-7Sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="194" y="413"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iRl-Ez-D8y">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TGF-fg-Cba" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zbg-V6-Pir" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6FT-4u-zfu">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SS1-UN-KUl" kind="relationship" relationship="rootViewController" id="qUZ-bt-VWP"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="2407" y="413"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

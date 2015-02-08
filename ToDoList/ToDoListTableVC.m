@@ -18,9 +18,19 @@
 @implementation ToDoListTableVC
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+    
+    
+    // load gesture event
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
+    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:recognizer];
+    
+
+    // loag initial data
     self.toDoItems = [[NSMutableArray alloc] init];
     [self loadInitialData];
+    
+    [super viewDidLoad];
 }
 
 - (void)loadInitialData {
@@ -62,6 +72,11 @@
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
+#pragma mark - gesture event
+
+- (void)swipeGesture:(UISwipeGestureRecognizer *)sender {
+    NSLog(@"swipe gesture called");
+}
 
 #pragma mark - segue
 

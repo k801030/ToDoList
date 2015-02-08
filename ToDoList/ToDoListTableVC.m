@@ -18,17 +18,15 @@
 @implementation ToDoListTableVC
 
 - (void)viewDidLoad {
-    
-    
-    // load gesture event
-    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeGesture:)];
-    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
-    [self.view addGestureRecognizer:recognizer];
-    
 
     // loag initial data
     self.toDoItems = [[NSMutableArray alloc] init];
     [self loadInitialData];
+    
+    // load gesture event
+    UISwipeGestureRecognizer *recognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(DidSwipe:) ];
+    recognizer.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.view addGestureRecognizer:recognizer];
     
     [super viewDidLoad];
 }
@@ -53,12 +51,15 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ListPrototypeCell" forIndexPath:indexPath];
     ToDoItem *todoItem = [self.toDoItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = todoItem.itemName;
+    
+    // add checkmark and name
     if (todoItem.completed) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
+    cell.textLabel.text = todoItem.itemName;
+
     return cell;
 }
 
@@ -72,10 +73,28 @@
     [tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
 }
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSLog(@"%ld", self.toDoItems.count);
+        [self.toDoItems removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    }
+}
+
 #pragma mark - gesture event
 
-- (void)swipeGesture:(UISwipeGestureRecognizer *)sender {
-    NSLog(@"swipe gesture called");
+- (void)DidSwipe:(UISwipeGestureRecognizer *)gestureRecognizer {
+
+    CGPoint swipeLocation = [gestureRecognizer locationInView:self.tableView];
+    NSIndexPath *swipedIndexPath = [self.tableView indexPathForRowAtPoint:swipeLocation];
+    UITableViewCell *swipedCell = [self.tableView cellForRowAtIndexPath:swipedIndexPath];
+    NSLog(@"swiped cell: %@", swipedCell.textLabel.text);
 }
 
 #pragma mark - segue
